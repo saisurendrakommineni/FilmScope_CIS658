@@ -1,0 +1,151 @@
+
+.Wrapper{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MainDivTag {
+  max-width: 500px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f4f6f8;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.h1Tag {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  word-wrap: break-word;
+}
+
+.Detail {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.LabelTag {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.InputTag {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.InputTag:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.SaveBtn,
+.CancelBtn {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 1rem;
+}
+
+.SaveBtn {
+  background-color: #4591e1;
+  color: #fff;
+}
+
+.SaveBtn:hover {
+  background-color: #007bff;
+}
+
+.CancelBtn {
+  background-color: #5d6267;
+  color: #fff;
+}
+
+.CancelBtn:hover {
+  background-color: rgb(220, 17, 17);
+}
+
+@media (max-width: 575.98px) {
+  .MainDivTag {
+    padding: 1rem;
+  }
+
+  .h1Tag {
+    font-size: 1.5rem;
+  }
+
+  .SaveBtn,
+  .CancelBtn {
+    display: block;
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .MainDivTag {
+    padding: 1.5rem;
+  }
+
+  .h1Tag {
+    font-size: 1.7rem;
+  }
+
+  .SaveBtn,
+  .CancelBtn {
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .MainDivTag {
+    padding: 2rem;
+  }
+
+  .h1Tag {
+    font-size: 1.8rem;
+  }
+
+  .SaveBtn,
+  .CancelBtn {
+    width: auto;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .MainDivTag {
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .MainDivTag {
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .MainDivTag {
+    padding: 3.5rem;
+  }
+
+  .h1Tag {
+    font-size: 2.2rem;
+  }
+}

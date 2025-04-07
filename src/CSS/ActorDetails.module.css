@@ -1,0 +1,131 @@
+.Container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0rem auto;
+  padding: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+.header{
+  display: flex;
+  justify-content: flex-start;
+  gap:3rem;
+}
+.backBtn{
+  width:auto;
+  background-color: #76787a;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.backBtn:hover {
+  background-color: #161716;
+}
+
+.Title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0.5rem 0;
+  color: #333;
+  word-wrap: break-word;
+}
+
+.Table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.Table th,.Table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  text-align: left;
+  word-break: break-word;
+}
+
+.Table th {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+
+.ActionBtn {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #1879e0;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.ActionBtn:hover {
+  background-color: #007bff;
+}
+
+.RemoveBtn {
+  background-color: #e83648;
+}
+
+.RemoveBtn:hover {
+  background-color: #ff031c;
+}
+
+.AddBtn {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.AddBtn:hover {
+  background-color: #218838;
+}
+
+@media (min-width: 768px) {
+  .Title {
+    font-size: 1.8rem;
+  }
+
+  .ActionBtn {
+    display: inline-block;
+    width:auto;
+    margin-right: 0.5rem;
+  }
+
+  .AddBtn {
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .Table th,.Table td {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Container {
+    padding: 2.5rem;
+  }
+
+  .Title {
+    font-size: 2rem;
+  }
+}

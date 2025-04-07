@@ -1,0 +1,303 @@
+.Container {
+    max-width: 100%;
+    margin: 2rem 1rem;
+    padding: 3rem;
+    border: 1px solid #ccc;
+    background-color: #fdfdfd;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .RowGroup {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6rem;
+    margin-bottom: 1.5rem;
+  }
+  .RowGroup1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6rem;
+    margin-bottom: 1.5rem;
+  }
+  .FormItem {
+    display: flex;
+    flex-direction: column;
+  }
+  .Title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .Subtitle {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #444;
+  }
+  
+  .LabelTag {
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: #333;
+  }
+  
+  .InputTag,
+  .SelectTag,
+  .FileTag {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    transition: border-color 0.2s ease;
+  }
+  
+  .InputTag:focus,
+  .SelectTag:focus,
+  .FileTag:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  
+  
+ 
+  
+  .CastCrewContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .CastList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  
+  .CastList li {
+    margin-bottom: 0.5rem;
+    color: #1219e8;  
+
+  }
+  
+  .ImagePreview {
+    position: relative;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+  
+  .ImagePreview img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .RemoveImageBtn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: rgba(255, 0, 0, 0.8);
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .RemoveImageBtn:hover {
+    background-color: rgba(200, 0, 0, 0.9);
+  }
+  
+  
+  .ActionBtn,
+  .SaveBtn,
+  .CancelBtn,
+  .RemoveBtn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .ActionBtn {
+    background-color: #007bff;
+    color: white;
+    width: 12.5rem;
+  }
+  
+  .ActionBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  .SaveBtn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .SaveBtn:hover {
+    background-color: #218838;
+  }
+  
+  .CancelBtn {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .CancelBtn:hover {
+    background-color: #5a6268;
+  }
+  
+  .RemoveBtn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .RemoveBtn:hover {
+    background-color: #b02a37;
+  }
+
+  .Btns
+  {
+    display: flex;
+    justify-content:center;
+    gap:3rem;
+  }
+  
+  .TextareaTag {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical; 
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    line-height: 1.5;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-bottom: 1.3rem;
+  }
+  
+
+  
+
+@media (max-width: 575.98px) {
+  .RowGroup {
+    grid-template-columns: 1fr;
+    gap:0;
+  }
+
+  .RowGroup1 {
+    grid-template-columns: 1fr;
+    gap:0;
+  }
+
+  .ActionBtn,
+  .SaveBtn,
+  .CancelBtn,
+  .RemoveBtn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .Title {
+    font-size: 1.5rem;
+  }
+
+  .Container {
+    padding: 2.5rem;
+    
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .RowGroup {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .RowGroup1 {
+    grid-template-columns: 1fr;
+  }
+
+  .Container {
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .RowGroup {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+
+  .RowGroup1 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .Container {
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .RowGroup {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+  }
+
+  .RowGroup1 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .Container {
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .RowGroup {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5.5rem;
+  }
+
+  .RowGroup1 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .Container {
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .RowGroup {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6rem;
+  }
+
+  .RowGroup1 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .Container {
+    padding: 3.5rem;
+  }
+}

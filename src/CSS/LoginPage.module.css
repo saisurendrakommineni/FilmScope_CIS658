@@ -1,0 +1,154 @@
+
+.Wrapper{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Container {
+    width: 100%;
+    max-width: 350px;
+    margin:auto;
+    padding: 2rem 1.5rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .Tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .TabButton {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #555;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .TabButtonActive {
+    color: #007bff;
+    border-bottom: 3px solid #007bff;
+    background-color: #f9f9f9;
+  }
+  
+  .FormGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .LabelTag {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+  .InputTag {
+    padding: 0.65rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .Error {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+  }
+  
+  .LoginButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  
+  .ButtonTag {
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ButtonTag:hover {
+    background-color: #0056b3;
+  }
+  
+  .LinkRow {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .LinkButton {
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+  
+  .LinkButton:hover {
+    color: #0056b3;
+  }
+  
+  @media (max-width: 480px) {
+    .Container {
+      border-radius: 0.75rem;
+      padding: 1.5rem 1rem;
+      max-width: 90%;
+    }
+  
+    .Tabs {
+      flex-direction: column;
+    }
+  
+    .TabButton {
+      width: 100%;
+      text-align: center;
+      border-bottom: 2px solid #eee;
+    }
+  
+    .LoginButtons {
+      gap: 0.5rem;
+    }
+  
+    .ButtonTag {
+      font-size: 0.95rem;
+      padding: 0.65rem;
+    }
+  
+    .LinkRow {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      text-align: center;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .Container {
+      max-width: 450px;
+    }
+  }
