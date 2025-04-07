@@ -36,7 +36,7 @@ function Login() {
         const payload = { email: username.trim(), password: password.trim(), role: selectedRole }; 
     
         try {
-            const response = await fetch("http://localhost:5000/api/auth/login", {
+            const response = await fetch("https://filmscope-cis658.onrender.com/api/auth/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),

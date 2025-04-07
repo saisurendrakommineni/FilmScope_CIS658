@@ -28,7 +28,7 @@ function Movies() {
     const fetchFavorites = useCallback(async () => {
         if (!user?.token) return;
         try {
-            const response = await fetch("http://localhost:5000/api/favorites/", {
+            const response = await fetch("https://filmscope-cis658.onrender.com/api/favorites/", {
                 headers: { Authorization: `Bearer ${user.token}` }
             });
             if (response.ok) {
@@ -45,7 +45,7 @@ function Movies() {
     const fetchRatings = useCallback(async () => {
         if (!user?.token) return;
         try {
-            const response = await fetch("http://localhost:5000/api/ratings/user", {
+            const response = await fetch("https://filmscope-cis658.onrender.com/api/ratings/user", {
                 headers: { Authorization: `Bearer ${user.token}` }
             });
             if (response.ok) {
@@ -67,7 +67,7 @@ function Movies() {
     }, [user?.token]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/movies/all")
+        fetch("https://filmscope-cis658.onrender.com/api/movies/all")
             .then((response) => response.json())
             .then((data) => setMovies(data))
             .catch((error) => console.error("Error fetching movies:", error));
@@ -80,7 +80,7 @@ function Movies() {
         if (!user || user.role !== "user") return;
         try {
             const isFavorite = favorites.includes(movie._id);
-            const url = `http://localhost:5000/api/favorites/${isFavorite ? "remove" : "add"}/${movie._id}`;
+            const url = `https://filmscope-cis658.onrender.com/api/favorites/${isFavorite ? "remove" : "add"}/${movie._id}`;
             const response = await fetch(url, {
                 method: isFavorite ? "DELETE" : "POST",
                 headers: {
@@ -102,7 +102,7 @@ function Movies() {
         if (!user || user.role !== "user") return;
         setRatings((prevRatings) => ({ ...prevRatings, [movieId]: newRating }));
         try {
-            const response = await fetch(`http://localhost:5000/api/ratings/rate/${movieId}`, {
+            const response = await fetch(`https://filmscope-cis658.onrender.com/api/ratings/rate/${movieId}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

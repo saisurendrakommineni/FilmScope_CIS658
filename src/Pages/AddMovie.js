@@ -115,7 +115,7 @@ function AddMovie() {
         const newMovie = {  ...movie,  industry: finalIndustry,  castAndCrew: movie.castAndCrew || [] };
         try 
         {
-            const response = await fetch("http://localhost:5000/api/movies/add", {
+            const response = await fetch("https://filmscope-cis658.onrender.com/api/movies/add", {
                 method: "POST",
                 headers: { 
                     "Content-Type": "application/json",

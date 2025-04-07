@@ -15,7 +15,7 @@ function MovieDetails() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/movies/${movieId}`)
+        fetch(`https://filmscope-cis658.onrender.com/api/movies/${movieId}`)
             .then((response) => response.json())
             .then((data) => {
                 console.log("Fetched Movie Details:", data);  
@@ -49,7 +49,7 @@ function MovieDetails() {
 
         try 
         {
-            const response = await fetch(`http://localhost:5000/api/movies/delete/${movie._id}`, {
+            const response = await fetch(`https://filmscope-cis658.onrender.com/api/movies/delete/${movie._id}`, {
                 method: "DELETE",
                 headers: {
                     "Authorization": `Bearer ${token}`  

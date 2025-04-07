@@ -22,7 +22,7 @@ function EditActorDetails() {
             return;
         }
 
-        fetch(`http://localhost:5000/api/actors/${actorName}`)
+        fetch(`https://filmscope-cis658.onrender.com/api/actors/${actorName}`)
             .then((response) => response.json())
             .then((data) => {
                 if (data.details && data.details[index]) {
@@ -47,7 +47,7 @@ function EditActorDetails() {
 
         try 
         {
-            const response = await fetch(`http://localhost:5000/api/actors/update/${actorName}/${index}`, {
+            const response = await fetch(`https://filmscope-cis658.onrender.com/api/actors/update/${actorName}/${index}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

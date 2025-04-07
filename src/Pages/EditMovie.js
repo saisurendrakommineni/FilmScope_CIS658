@@ -29,7 +29,7 @@ function EditMovie() {
             return;
         }
 
-        fetch(`http://localhost:5000/api/movies/${movieId}`)
+        fetch(`https://filmscope-cis658.onrender.com/api/movies/${movieId}`)
             .then((response) => response.json())
             .then((data) => {
                 if (!data || data.message === "Movie not found") {
@@ -136,7 +136,7 @@ function EditMovie() {
         }
 
         try {
-            const response = await fetch(`http://localhost:5000/api/movies/update/${movieId}`, {
+            const response = await fetch(`https://filmscope-cis658.onrender.com/api/movies/update/${movieId}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

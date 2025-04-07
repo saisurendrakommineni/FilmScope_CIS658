@@ -33,7 +33,7 @@ function Favorites() {
     
     const removeFavorite = async (movieId) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/favorites/remove/${movieId}`, {
+            const response = await fetch(`https://filmscope-cis658.onrender.com/api/favorites/remove/${movieId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",

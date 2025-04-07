@@ -18,7 +18,7 @@ function DirectorDetails() {
     const movie = location.state?.movie;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/directors/${directorName}`)
+        fetch(`https://filmscope-cis658.onrender.com/api/directors/${directorName}`)
             .then((response) => response.json())
             .then((data) => {
                 setDetails(data.details || []);
@@ -38,7 +38,7 @@ function DirectorDetails() {
 
         try 
         {
-            const response = await fetch(`http://localhost:5000/api/directors/delete-detail/${directorName}/${index}`, {
+            const response = await fetch(`https://filmscope-cis658.onrender.com/api/directors/delete-detail/${directorName}/${index}`, {
                 method: "DELETE",
                 headers: { Authorization: `Bearer ${user?.token}` } 
             });

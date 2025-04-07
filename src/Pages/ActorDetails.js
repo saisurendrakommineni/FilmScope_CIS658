@@ -16,7 +16,7 @@ function ActorDetails() {
     const movie = location.state?.movie;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/actors/${actorName}`)
+        fetch(`https://filmscope-cis658.onrender.com/api/actors/${actorName}`)
             .then((response) => response.json())
             .then((data) => {
                 setDetails(data.details || []);
@@ -32,7 +32,7 @@ function ActorDetails() {
     const handleRemoveDetail = async (index) => {
         try 
         {
-            const response = await fetch(`http://localhost:5000/api/actors/delete-detail/${actorName}/${index}`, {
+            const response = await fetch(`https://filmscope-cis658.onrender.com/api/actors/delete-detail/${actorName}/${index}`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${user?.token}` 
