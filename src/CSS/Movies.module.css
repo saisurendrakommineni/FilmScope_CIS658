@@ -59,9 +59,8 @@
 }
 
 .movieCard {
-  flex: 0 0 12%;
-  min-width: 120px;
-  max-width: 150px;
+  flex: 0 0 auto;
+  width: 130px;
   text-align: center;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -84,6 +83,10 @@
   font-size: 0.95rem;
   text-align: center;
   width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  display: block;
 }
 
 .heart {

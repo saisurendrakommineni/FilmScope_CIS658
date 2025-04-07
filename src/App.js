@@ -5,7 +5,7 @@
 
 
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 import bgImage from './assets/background_image.png'
 import styles from './CSS/AppBackground.module.css';
@@ -29,13 +29,16 @@ import EditDirectorDetails from './Pages/EditDirectorDetails';
 
 function App() {
     const { user } = useContext(AuthContext);
-    const [isGuest, setIsGuest] = useState(false);
     const location = useLocation();
+    // const [isGuest, setIsGuest] = useState(false);
 
-    useEffect(() => {
+
+    // useEffect(() => {
         
-        setIsGuest(localStorage.getItem("role") === "guest");
-    }, [user]); 
+    //     setIsGuest(localStorage.getItem("role") === "guest");
+    // }, [user]); 
+    const { isGuest } = useContext(AuthContext);
+
 
     const hideHeaderPages = ["/", "/success", "/forgot-password", "/create-account"];
 

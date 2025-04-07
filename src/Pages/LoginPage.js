@@ -5,7 +5,7 @@ import styles from '../CSS/LoginPage.module.css';
 
 function Login() {
     const navigate = useNavigate();
-    const { loginUser } = useContext(AuthContext);
+    const { loginUser,loginGuest } = useContext(AuthContext);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isTouched, setIsTouched] = useState({ username: false, password: false });
@@ -27,11 +27,17 @@ function Login() {
     };
 
     const handleLogin = async (selectedRole) => {
+        // if (selectedRole === "guest") {
+        //     localStorage.setItem("role", "guest");
+        //     navigate("/movies");
+        //     return;
+        // }
         if (selectedRole === "guest") {
-            localStorage.setItem("role", "guest");
-            navigate("/movies");
-            return;
-        }
+          loginGuest(); 
+          navigate("/movies");
+          return;
+      }
+      
     
         const payload = { email: username.trim(), password: password.trim(), role: selectedRole }; 
     

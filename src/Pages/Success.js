@@ -5,6 +5,8 @@ function Success() {
   const navigate = useNavigate();
 
   return (
+    <div className={styles.Wrapper}>
+
     <div className={styles.Container}>
       <h1 className={`${styles.TitleTag} ${styles.SuccessAnimation}`}>
         Account Created Successfully!!
@@ -12,6 +14,7 @@ function Success() {
       <div className={styles.ButtonGroup}>
         <button className={`${styles.ButtonTag} ${styles.SecondaryButton}`} onClick={() => navigate(`/`)}>Back to Login</button>
       </div>
+    </div>
     </div>
   );
 }
