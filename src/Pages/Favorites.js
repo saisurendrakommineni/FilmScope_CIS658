@@ -12,7 +12,7 @@ function Favorites() {
         if (!user?.token) return;
     
         try {
-            const response = await fetch("http://localhost:5000/api/favorites/", {
+            const response = await fetch("https://filmscope-cis658.onrender.com/api/favorites/", {
                 headers: { Authorization: `Bearer ${user.token}` }
             });
     
