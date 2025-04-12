@@ -1,15 +1,17 @@
-import { useState, useContext } from "react";
+import { useState, useContext,useEffect  } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { FaTrash } from "react-icons/fa";
 
 import styles from "../CSS/AddMovie.module.css"
 
+const initialIndustries = ["Hollywood", "Tollywood","Bollywood"];
+
+
 function AddMovie() {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext); 
 
-    const initialIndustries = ["Hollywood", "Tollywood","Bollywood"];
     const [industries, setIndustries] = useState(initialIndustries);
     const [customIndustry, setCustomIndustry] = useState("");
 
@@ -26,6 +28,20 @@ function AddMovie() {
         castAndCrew: [],
         description: ""
     });
+    useEffect(() => {
+      const fetchIndustries = async () => {
+        try {
+          const response = await fetch("https://filmscope-cis658.onrender.com/api/movies/all");
+          const data = await response.json();
+          const uniqueIndustries = [...new Set(data.map(movie => movie.industry))];
+          setIndustries([...initialIndustries, ...uniqueIndustries.filter(ind => !initialIndustries.includes(ind))]);
+        } catch (error) {
+          console.error("Error fetching industries:", error);
+        }
+      };
+    
+      fetchIndustries();
+    }, []);
 
     const [castMember, setCastMember] = useState({ role: "", name: "" });
 
@@ -227,9 +243,9 @@ function AddMovie() {
 
       <h3 className={styles.Subtitle}>Add Cast & Crew Members</h3>
       <div className={styles.CastCrewContainer}>
-        <input className={styles.InputTag} type="text" placeholder="Role (e.g. Director)" value={castMember.role}
+        <input className={styles.InputTag} type="text" placeholder="e.g. Main Actor" value={castMember.role}
          onChange={(e) => setCastMember({ ...castMember, role: e.target.value })}/>
-        <input className={styles.InputTag} type="text" placeholder="Name" value={castMember.name}
+        <input className={styles.InputTag} type="text" placeholder="e.g. NTR as Devara" value={castMember.name}
          onChange={(e) => setCastMember({ ...castMember, name: e.target.value })}/>
         <button type="button" className={styles.ActionBtn} onClick={handleAddCastMember}>Add Cast Member</button>
       </div>

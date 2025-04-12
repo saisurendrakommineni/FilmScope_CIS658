@@ -60,7 +60,7 @@
 
 .movieCard {
   flex: 0 0 auto;
-  width: 130px;
+  /* width: 130px; */
   text-align: center;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -155,12 +155,15 @@
   .movieImage {
     width: 90%;
   }
+  .heart{
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
   .movieCard {
-    min-width: 110px;
-    max-width: 130px;
+    min-width: 90px;
+    max-width: 110px;
   }
 
   .movieImage {
@@ -170,8 +173,8 @@
 
 @media (min-width: 768px) and (max-width: 991.98px) {
   .movieCard {
-    min-width: 120px;
-    max-width: 150px;
+    min-width: 100px;
+    max-width: 130px;
   }
 
   .movieImage {
@@ -181,8 +184,8 @@
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .movieCard {
-    min-width: 140px;
-    max-width: 170px;
+    min-width: 110px;
+    max-width: 140px;
   }
 
   .movieImage {
@@ -192,14 +195,14 @@
 
 @media (min-width: 1200px) and (max-width: 1399.98px) {
   .movieCard {
-    min-width: 160px;
-    max-width: 190px;
+    min-width: 130px;
+    max-width: 170px;
   }
 }
 
 @media (min-width: 1400px) {
   .movieCard {
-    min-width: 180px;
-    max-width: 220px;
+    min-width: 150px;
+    max-width: 180px;
   }
 }

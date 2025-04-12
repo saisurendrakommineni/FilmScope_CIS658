@@ -56,7 +56,8 @@ function Favorites() {
                 favorites.map((movie) => (
                     <div key={movie._id} style={{ display: "flex", alignItems: "center" }}>
                         <p onClick={() => navigate(`/movie-details/${movie._id}`)}> {movie.name}</p>
-                        <FaTrash style={{ cursor: "pointer", marginLeft: "10px", color: "red" }} onClick={() => removeFavorite(movie._id)}/>
+                        <FaTrash data-testid={`remove-favorite-${movie._id}`}
+                        style={{ cursor: "pointer", marginLeft: "10px", color: "red" }} onClick={() => removeFavorite(movie._id)}/>
                     </div>
                 )) ) :( <p>No favorite movies added.</p>)
             }

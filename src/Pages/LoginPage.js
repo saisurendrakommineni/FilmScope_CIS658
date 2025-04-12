@@ -68,10 +68,10 @@ function Login() {
     
     
  return (
-  <div className={styles.Wrapper}>
+<div className={styles.Wrapper}>
           <div className={styles.Container}>
             <div className={styles.Tabs}>
-            <button className={`${styles.TabButton} ${selectedRole === "user" ? styles.TabButtonActive : ""}`}onClick={() => setSelectedRole("user")}>
+            <button   data-testid="user-tab" className={`${styles.TabButton} ${selectedRole === "user" ? styles.TabButtonActive : ""}`}onClick={() => setSelectedRole("user")}>
               User Login
             </button>
             <button className={`${styles.TabButton} ${selectedRole === "admin" ? styles.TabButtonActive : ""}`} onClick={() => setSelectedRole("admin")}>
@@ -82,7 +82,7 @@ function Login() {
           <form onSubmit={(e) => e.preventDefault()}>
             <div className={styles.FormGroup}>
               <label className={styles.LabelTag} htmlFor="for_username">Username</label>
-              <input className={styles.InputTag} type="text" id="for_username" value={username} onChange={(e) => setUsername(e.target.value)}
+              <input data-testid="username-input" className={styles.InputTag} type="text" id="for_username" value={username} onChange={(e) => setUsername(e.target.value)}
                 onBlur={() => handleBlur("username")}/>
               {isTouched.username && formErrors.username && (
               <p className={styles.Error}>{formErrors.username}</p>
@@ -91,7 +91,7 @@ function Login() {
 
             <div className={styles.FormGroup}>
               <label className={styles.LabelTag} htmlFor="for_password">Password</label>
-              <input className={styles.InputTag} type="password" id="for_password" value={password} onChange={(e) => setPassword(e.target.value)}
+              <input data-testid="password-input" className={styles.InputTag} type="password" id="for_password" value={password} onChange={(e) => setPassword(e.target.value)}
                 onBlur={() => handleBlur("password")}/>
               {isTouched.password && formErrors.password && (
               <p className={styles.Error}>{formErrors.password}</p>
@@ -102,8 +102,7 @@ function Login() {
 
             <div className={styles.LoginButtons}>
               {selectedRole === "user" && (
-                <button type="button" className={styles.ButtonTag} onClick={() => handleLogin("user")}>
-                  Login as User
+                <button data-testid="login-user-button" type="button" className={styles.ButtonTag} onClick={() => handleLogin("user")}> Login as User
                 </button>
               )}
               {selectedRole === "admin" && (

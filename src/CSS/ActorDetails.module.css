@@ -31,7 +31,6 @@
   font-size: 1.5rem;
   text-align: center;
   margin: 0.5rem 0;
-  color: #333;
   word-wrap: break-word;
 }
 
@@ -50,7 +49,7 @@
 }
 
 .Table th {
-  background-color: #f0f0f0;
+  background-color: #625050fd;
   font-weight: 600;
 }
 

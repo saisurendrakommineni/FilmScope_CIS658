@@ -223,7 +223,7 @@ function Movies() {
                                         <p>{index + 1}. {movie.name} - {movie.boxOfficeGross}$</p>
                                         {user?.role === "user" && (
                                             <div className={styles.heart}>
-                                                <FaHeart
+                                                <FaHeart data-testid={`favorite-icon-${movie._id}`}
                                                     style={{ cursor: "pointer", color: favorites.includes(movie._id) ? "red" : "gray" }}
                                                     onClick={() => toggleFavorite(movie)}/>
                                                 <Rating key={movie._id} initialRating={ratings[movie._id] || 0}

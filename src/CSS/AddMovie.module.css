@@ -1,6 +1,6 @@
 .Container {
     max-width: 100%;
-    margin: 2rem 1rem;
+    margin: 2rem 2rem;
     padding: 3rem;
     border: 1px solid #ccc;
     background-color: #fdfdfd;
@@ -62,10 +62,6 @@
     border-color: #007bff;
     outline: none;
   }
-  
-  
-  
- 
   
   .CastCrewContainer {
     display: flex;

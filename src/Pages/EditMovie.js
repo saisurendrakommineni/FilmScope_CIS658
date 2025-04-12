@@ -4,6 +4,7 @@ import { AuthContext } from "../context/AuthContext";
 import styles from "../CSS/AddMovie.module.css";
 import { FaTrash } from "react-icons/fa";
 
+const initialIndustries = ["Hollywood", "Tollywood", "Bollywood"];
 
 function EditMovie() {
     const { movieId } = useParams();
@@ -12,9 +13,27 @@ function EditMovie() {
     const [updatedMovie, setUpdatedMovie] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [customIndustry, setCustomIndustry] = useState("");
     const [castMember, setCastMember] = useState({ role: "", name: "" });
+    const [industries, setIndustries] = useState(initialIndustries);
 
+    useEffect(() => {
+      const fetchIndustries = async () => {
+        try {
+          const response = await fetch("https://filmscope-cis658.onrender.com/api/movies/all");
+          const data = await response.json();
+          const uniqueIndustries = [...new Set(data.map(movie => movie.industry))];
+          setIndustries([
+            ...initialIndustries,
+            ...uniqueIndustries.filter(ind => !initialIndustries.includes(ind)),
+          ]);
+        } catch (error) {
+          console.error("Error fetching industries:", error);
+        }
+      };
+    
+      fetchIndustries();
+    }, []);
+    
     useEffect(() => {
         if (!user || user.role !== "admin") {
             navigate("/movies");
@@ -88,7 +107,7 @@ function EditMovie() {
     };
 
     const handleUpdateMovie = async () => {
-      const finalIndustry = updatedMovie.industry === "Custom" ? customIndustry.trim() : updatedMovie.industry;
+      const finalIndustry = updatedMovie.industry;
 
       if (!updatedMovie.name.trim()) {
         alert("Movie Name is required.");
@@ -169,21 +188,13 @@ function EditMovie() {
 
           <div className={styles.FormItem}>
             <label className={styles.LabelTag}>Industry</label>
-            <select className={styles.SelectTag} name="industry" value={updatedMovie.industry} onChange={handleChange}>
-              <option value="Hollywood">Hollywood</option>
-              <option value="Bollywood">Bollywood</option>
-              <option value="Tollywood">Tollywood</option>
-              <option value="Custom">Custom (Add New Industry)</option>
+            <select className={styles.SelectTag} name="industry" value={updatedMovie.industry}onChange={handleChange}>
+              {industries.map((industry) => (
+                <option key={industry} value={industry}>{industry}</option>
+              ))}
             </select>
           </div>
 
-          {updatedMovie.industry === "Custom" && (
-            <div className={styles.FormItem}>
-              <label className={styles.LabelTag}>New Industry Name</label>
-              <input className={styles.InputTag} type="text" placeholder="Enter New Industry Name" value={customIndustry}
-                onChange={(e) => setCustomIndustry(e.target.value)} required/>
-            </div>
-          )}
 
           <div className={styles.FormItem}>
             <label className={styles.LabelTag}>Year</label>
@@ -238,10 +249,10 @@ function EditMovie() {
 
         <h3 className={styles.Subtitle}>Edit Cast & Crew Members</h3>
         <div className={styles.CastCrewContainer}>
-          <input className={styles.InputTag} type="text" placeholder="Role (e.g. Director)" value={castMember.role}
+          <input className={styles.InputTag} type="text" placeholder="e.g. Main Actor" value={castMember.role}
           onChange={(e) => setCastMember({ ...castMember, role: e.target.value })}/>
 
-          <input className={styles.InputTag} type="text" placeholder="Name" value={castMember.name}
+          <input className={styles.InputTag} type="text" placeholder="e.g. NTR as Devara" value={castMember.name}
             onChange={(e) => setCastMember({ ...castMember, name: e.target.value })}/>
           <button type="button" className={styles.ActionBtn} onClick={handleAddCastMember}>Add Cast Member
           </button>

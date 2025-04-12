@@ -2,6 +2,8 @@
 // npm install react-icons
 //npm install react-rating
 //npm install react-select
+//npm install cypress --save-dev
+//npm install --save-dev eslint-plugin-cypress --legacy-peer-deps
 
 
 import { Route, Routes, useLocation } from 'react-router-dom';
