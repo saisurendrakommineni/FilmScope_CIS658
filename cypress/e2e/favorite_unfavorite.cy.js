@@ -3,7 +3,7 @@
 describe("Favorite and Unfavorite Movie Flow", () => {
     it("should login, favorite a movie, verify in favorites, unfavorite it, and verify removal", () => {
 
-      cy.visit("http://localhost:3000/");
+      cy.visit("https://filmscope-cis658.onrender.com/");
   
       cy.get('[data-testid="username-input"]', { timeout: 15000 }).should("be.visible");
 

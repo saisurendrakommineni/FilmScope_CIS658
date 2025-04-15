@@ -28,7 +28,7 @@ function MovieDetails() {
             });
     }, [movieId]);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <p>Loading...Please Wait</p>;
     if (!movie) return <p>Movie not found.</p>;
 
     const handleDeleteMovie = async () => {
@@ -103,16 +103,16 @@ function MovieDetails() {
           <div className={styles.details}>
             <h1>{movie.name}</h1>
             <p className={styles.clickableLink} onClick={() => navigate(`/director-details/${encodeURIComponent(movie.director)}`, { state: { movie } })}>
-              <strong>Director:</strong> {movie.director}
+              <strong><em>Director:</em></strong> {movie.director}
             </p>
             <p className={styles.clickableLink} onClick={() => navigate(`/actor-details/${encodeURIComponent(movie.actor)}`, { state: { movie } })}>
-              <strong>Actor:</strong> {movie.actor}
+              <strong><em>Actor:</em></strong> {movie.actor}
             </p>
-            <p><strong>Budget:</strong> {movie.budget}$</p>
-            <p><strong>Box Office Gross:</strong> {movie.boxOfficeGross}$</p>
-            <p><strong>Released Year:</strong> {movie.year}</p>
-            <p><strong>Genre:</strong> {movie.genre}</p>
-            <p className={styles.justified}><strong>Description:</strong> {movie.description}</p>
+            <p><strong><em>Budget:</em></strong> {movie.budget}$</p>
+            <p><strong><em>Box Office Gross:</em></strong> {movie.boxOfficeGross}$</p>
+            <p><strong><em>Released Year:</em></strong> {movie.year}</p>
+            <p><strong><em>Genre:</em></strong> {movie.genre}</p>
+            <p className={styles.justified}><strong><em>Description:</em></strong> {movie.description}</p>
       
            
           </div>
@@ -123,7 +123,7 @@ function MovieDetails() {
               <div className={styles.castList}>
                 {movie.castAndCrew.map((member, index) => (
                   <div key={index} className={styles.castItem}>
-                    <strong>{member.role}:</strong> {member.name}
+                    <strong><em>{member.role}:</em></strong> {member.name}
                   </div>
                 ))}
               </div>

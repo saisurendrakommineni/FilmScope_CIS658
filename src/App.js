@@ -32,13 +32,6 @@ import EditDirectorDetails from './Pages/EditDirectorDetails';
 function App() {
     const { user } = useContext(AuthContext);
     const location = useLocation();
-    // const [isGuest, setIsGuest] = useState(false);
-
-
-    // useEffect(() => {
-        
-    //     setIsGuest(localStorage.getItem("role") === "guest");
-    // }, [user]); 
     const { isGuest } = useContext(AuthContext);
 
 

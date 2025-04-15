@@ -110,7 +110,7 @@ function CreateAccount() {
         <div className={styles.Wrapper}>
               <div className={styles.Container}>
                   <form onSubmit={handleAccountCreation}>
-                    <h1 className={styles.TitleTag}>Create Account</h1>
+                    <h1 className={styles.TitleTag}>CREATE ACCOUNT</h1>
 
                     <div className={styles.FormItem}>
                       <label htmlFor="for_firstname" className={styles.LabelTag}>FirstName<sup className={styles.RequiredStar}>*</sup></label>

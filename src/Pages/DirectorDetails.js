@@ -56,7 +56,7 @@ function DirectorDetails() {
         }
     };
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <p>Loading... Please Wait</p>;
 
     return (
         <div className={styles.Container}>
@@ -78,7 +78,7 @@ function DirectorDetails() {
                     <tbody>
                         {details.map((detail, index) => (
                             <tr key={index}>
-                                <td>{detail.label}</td>
+                                <td><em>{detail.label}</em></td>
                                 <td>{detail.value}</td>
                                 {user?.role === "admin" && (
                                     <td>

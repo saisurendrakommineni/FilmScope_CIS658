@@ -21,6 +21,8 @@ function Movies() {
     const [topMoviesCount, setTopMoviesCount] = useState("All");
     const [customCount, setCustomCount] = useState("");
     const [filtersOpen, setFiltersOpen] = useState(false);
+    const [loading, setLoading] = useState(true);
+
 
     const toggleFilters = () => setFiltersOpen(!filtersOpen);
 
@@ -69,12 +71,14 @@ function Movies() {
     useEffect(() => {
         fetch("https://filmscope-cis658.onrender.com/api/movies/all")
             .then((response) => response.json())
-            .then((data) => setMovies(data))
-            .catch((error) => console.error("Error fetching movies:", error));
+            .then((data) => {setMovies(data);setLoading(false);})
+            .catch((error) => {console.error("Error fetching movies:", error);setLoading(false);});
 
         fetchFavorites();  
         fetchRatings();  
     }, [fetchFavorites, fetchRatings, user]); 
+
+    if (loading) return <p>Loading...Please Wait</p>;
 
     const toggleFavorite = async (movie) => {
         if (!user || user.role !== "user") return;

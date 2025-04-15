@@ -162,7 +162,7 @@ function AddMovie() {
 
     return (
     <div className={styles.Container}>
-      <h1 className={styles.Title}>Add Movie</h1>
+      <h1 className={styles.Title}>ADD MOVIE</h1>
 
       <div className={styles.RowGroup}>
         <div className={styles.FormItem}>
