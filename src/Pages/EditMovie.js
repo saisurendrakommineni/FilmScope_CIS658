@@ -178,7 +178,7 @@ function EditMovie() {
 
     return (
         <div className={styles.Container}>
-          <h1 className={styles.Title}>Edit Movie</h1>
+          <h1 className={styles.Title}>EDIT MOVIE</h1>
 
         <div className={styles.RowGroup}>
           <div className={styles.FormItem}>

@@ -27,18 +27,23 @@
 
 .details {
   flex: 1;
+  width: 100%;
   min-width: 280px;
   max-width: 500px;
+  word-wrap: break-word;
 }
-
 .details h1 {
+  width: 100%;
   margin-bottom: 0.625rem;
   font-size: 1.8rem;
+  word-wrap: break-word;
 }
 
 .details p {
+  width: 100%;
   margin: 0.5rem 0;
   font-size: 1rem;
+  word-wrap: break-word;
 }
 
 .centeredButtons {
@@ -78,9 +83,10 @@
 
 .castSection {
   flex: 1;
-  min-width: 200px;
+  min-width: 200px; 
   max-width: 300px;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
+ 
 }
 
 .justified {
@@ -99,35 +105,41 @@
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   color:  #ffffff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-align: left;
 }
 
 @media (max-width: 575.98px) {
   .container {
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     text-align: center;
     gap: 0;
   }
+
 
   .details {
     text-align: left;
     margin-top: 1rem;
   }
 
+  
   .imageSection img {
     max-width: 160px;
+    
   }
 
   .castSection {
     margin-top: 0;
-    text-align: center;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
   .container {
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     text-align: center;
     gap: 0;
   }
@@ -143,7 +155,6 @@
 
   .castSection {
     margin-top: 0;
-    text-align: center;
   }
 }
 

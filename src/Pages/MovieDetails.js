@@ -101,7 +101,7 @@ function MovieDetails() {
           </div>
       
           <div className={styles.details}>
-            <h1>{movie.name}</h1>
+          <h1>{movie.name}</h1>
             <p className={styles.clickableLink} onClick={() => navigate(`/director-details/${encodeURIComponent(movie.director)}`, { state: { movie } })}>
               <strong><em>Director:</em></strong> {movie.director}
             </p>

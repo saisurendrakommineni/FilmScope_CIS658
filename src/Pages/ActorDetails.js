@@ -55,12 +55,14 @@ function ActorDetails() {
     if (loading) return <p>Loading...Please Wait</p>;
 
     return (
-        <div className={styles.Container}>
+        <div className={styles.Wrapper}>
+            
+            <button className={styles.backBtn} onClick={() => navigate(`/movie-details/${movie._id}`, { state: { movie } })}>Back</button>
+            <div className={styles.Container}>
+
             <div className={styles.header}>
-                <button className={styles.backBtn} onClick={() => navigate(`/movie-details/${movie._id}`, { state: { movie } })}>Back</button>
-                <h1 className={styles.Title}>Details for {actorName}</h1>
+                <h1 className={styles.Title}>Actor Profile : {actorName}</h1>
             </div>
-    
             {details.length > 0 ? (
                 <table className={styles.Table}>
                     <thead>
@@ -96,6 +98,7 @@ function ActorDetails() {
                     Add Details
                 </button>
             )}
+        </div>
         </div>
     );
     

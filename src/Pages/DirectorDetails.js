@@ -59,10 +59,12 @@ function DirectorDetails() {
     if (loading) return <p>Loading... Please Wait</p>;
 
     return (
+        <div className={styles.Wrapper}>
+            <button className={styles.backBtn} onClick={() => navigate(`/movie-details/${movie._id}`, { state: { movie } })}>Back</button>
+
         <div className={styles.Container}>
            <div className={styles.header}>
-                <button className={styles.backBtn} onClick={() => navigate(`/movie-details/${movie._id}`, { state: { movie } })}>Back</button>
-                <h1 className={styles.Title}>Details for {directorName}</h1>
+                <h1 className={styles.Title}>Director Profile : {directorName}</h1>
           </div>
             
     
@@ -100,6 +102,8 @@ function DirectorDetails() {
                 onClick={() => navigate(`/add-director-details/${directorName}`, { state: { movie } })}>Add Details</button>
             )}
         </div>
+        </div>
+
     );
     
 }

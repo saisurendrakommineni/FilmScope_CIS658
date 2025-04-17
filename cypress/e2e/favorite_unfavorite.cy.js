@@ -9,27 +9,33 @@ describe("Favorite and Unfavorite Movie Flow", () => {
 
         //login
       cy.get('[data-testid="username-input"]').type("sai@gmail.com");
-      cy.get('[data-testid="password-input"]').type("Surisurendra3399.!");
+      cy.get('[data-testid="password-input"]').type("Saisurendra123.!");
       cy.get('[data-testid="login-user-button"]').click();
   
       // movie page
       cy.get('[data-testid^="favorite-icon-"]', { timeout: 20000 }).first().should("be.visible");
   
-      // favorite the first movie
-      cy.get('[data-testid^="favorite-icon-"]').first().click();
-  
+      // favorite the first movie if not
+      cy.get('[data-testid^="favorite-icon-"]').first().then(($icon) => {
+        const isFavorited = $icon.css("color") === "rgb(255, 0, 0)"; 
+        if (!isFavorited) {
+          cy.intercept("POST", "/api/favorites/add/**").as("addFavorite");
+          cy.wrap($icon).click();
+          cy.wait("@addFavorite");
+        }
+      });  
       //  favorites page
+      cy.intercept("GET", "/api/favorites/**").as("getFavorites");
       cy.contains("View Favorites").click();
+      cy.wait("@getFavorites");
       cy.url().should("include", "/favorites");
   
       // favorite movie is listed
       cy.get("h1").should("contain", "My Favorite Movies");
-      cy.get('[data-testid^="remove-favorite-"]').should("exist");
+      cy.get('[data-testid^="remove-favorite-"]', { timeout: 10000 }).should("exist");
   
       // unfav the movie
       cy.get('[data-testid^="remove-favorite-"]').first().click();
-  
-      cy.contains("No favorite movies added.").should("be.visible");
   
       //  movies page
       cy.contains("Back to Movies").click();

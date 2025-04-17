@@ -66,7 +66,7 @@ function AddActorDetails() {
     return (
         <div className={styles.Wrapper}>
         <div className={styles.MainDivTag}>
-            <h1 className={styles.h1Tag}>Add Detail for {actorName}</h1>
+            <h1 className={styles.h1Tag}>Add details for Actor : {actorName}</h1>
             <div className={styles.Detail}>
                 <label className={styles.LabelTag}>Enter Label: </label>
                 <input type="text" className={styles.InputTag} placeholder= "e.g. No of Movies" value={newDetail.label} 
